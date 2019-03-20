@@ -3,7 +3,7 @@ import io from 'socket.io-client';
 let PORT = 4000;
 let BASE_URL = 'APIs';
 let Url = window.location.href;
-let BaseUrl = "/api/";
+let BaseUrl = `/${BASE_URL}/`;
 let BasePath = "/";
 let RootPath = "/";
 let Platform = 1;
