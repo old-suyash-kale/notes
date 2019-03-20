@@ -1,0 +1,180 @@
+@mixin transition (
+	$for: all,
+	$time-in: 0.5s,
+	$type: ease,
+	$time-out: 0s
+) {
+	transition: $for $time-in $type $time-out;
+	-moz-transition: $for $time-in $type $time-out;
+	-webkit-transition: $for $time-in $type $time-out;
+	-ie-transition: $for $time-in $type $time-out;
+	-o-transition: $for $time-in $type $time-out;
+}
+
+body {
+    padding-bottom: 36px;
+    @include transition();
+    @extend .position-relative;
+    .app-footer {
+        bottom: 0;
+        left: 0;
+        @extend .position-absolute;
+    }
+}
+
+.scale-hover {
+    @include transition();
+    &:hover {
+        display: inline-block;
+        transform: scale(1.01);
+        @include transition();
+    }
+}
+.scale-hover-l {
+    @include transition();
+    &:hover {
+        display: inline-block;
+        transform: scale(1.1);
+        @include transition();
+    }
+}
+.scale-hover-xl {
+    @include transition();
+    &:hover {
+        display: inline-block;
+        transform: scale(1.2);
+        @include transition();
+    }
+}
+.scale-hover-negative {
+    @include transition();
+    &:hover {
+        display: inline-block;
+        transform: scale(0.97);
+        @include transition();
+    }
+}
+
+.scale-focus {
+    @include transition();
+    &:focus {
+        display: inline-block;
+        transform: scale(1.01);
+        @include transition();
+    }
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+[placeholder]:empty::before {
+    content: attr(placeholder);
+    @extend .text-muted;
+}
+[placeholder]:empty:focus::before {
+    content: "";
+}
+
+.apply-blur-filter {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 98;
+    opacity: 0.7;
+    @extend .position-absolute;
+    @include transition();
+    &.full {
+        @extend .position-fixed;
+    }
+}
+
+.toast-container {
+    min-height: 0px;
+    @extend .p-3;
+    .Toastify__toast-body {
+        @extend .m-0;
+    }
+    .Toastify__close-button {
+        color: initial;
+        outline: none;
+    }
+}
+
+.btn, input {
+    outline: none;
+}
+
+*::-webkit-scrollbar {
+    width: 0.4em;
+}
+*::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+*::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+.dropdown-menu-right {
+    left: auto;
+    right: 0;
+}
+
+.on-hover-parent {
+    .on-hover {
+        @extend .d-none;
+    }
+    &:hover {
+        .on-hover {
+            @extend .d-block;
+        }
+    }
+}
+
+$progress-height: 2px;
+.progress-animation {
+    height: $progress-height;
+    @extend .position-relative, .rounded-0;
+    .progress-bar {
+        height: $progress-height;
+        top: 0;
+        width: 40%;
+        animation-name: ProgressAnimation;
+        animation-duration: 1.4s;
+        animation-delay: 0s;
+        animation-fill-mode: none;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        @extend .position-absolute;
+    }
+}
+@keyframes ProgressAnimation {
+	0% {
+		left: -100%;
+	}
+	100% {
+		left: 100%;
+	}
+}
+
+.opacity-1 {
+    opacity: 0.1;
+}
+
+.form-group-has-icon {
+    @extend .position-relative;
+    .form-group-icons {
+        top: 0;
+        right: 0;
+        @extend .position-absolute;
+    }
+}
+
+.tooltip {
+    &, & * {
+        @extend .rounded-0;
+    }
+}

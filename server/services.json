@@ -1,0 +1,123 @@
+{
+    "/Signup": {
+        "post": {
+            "email": {
+                "label": "Email",
+                "required": true,
+                "email": true
+            },
+            "password": {
+                "label": "Password",
+                "required": true,
+                "minLength": 6,
+                "maxLength": 60
+            },
+            "fname": {
+                "label": "First Name",
+                "required": true,
+                "minLength": 2,
+                "maxLength": 20
+            },
+            "lname": {
+                "label": "Last Name",
+                "required": true,
+                "minLength": 2,
+                "maxLength": 20
+            },
+            "platform": {
+                "label": "Platform",
+                "required": true,
+                "number": true
+            }
+        }
+    },
+    "/Signin": {
+        "post": {
+            "email": {
+                "label": "Email",
+                "required": true,
+                "email": true
+            },
+            "password": {
+                "label": "Password",
+                "required": true,
+                "minLength": 6,
+                "maxLength": 60
+            },
+            "platform": {
+                "label": "Platform",
+                "required": true,
+                "number": true
+            }
+        }
+    },
+    "/Notes": {
+        "post": {
+            "title": {
+                "label": "Title",
+                "default": ""
+            },
+            "description": {
+                "label": "Title",
+                "default": ""
+            }
+        },
+        "get": {},
+        "delete" :{
+            "note_id": {
+                "required": true
+            }
+        }
+    },
+    "/Notes/Title": {
+        "put": {
+            "note_id": {
+                "label": "Note Id"
+            },
+            "title": {
+                "label": "Title",
+                "default": ""
+            }
+        }
+    },
+    "/Notes/Description": {
+        "put": {
+            "note_id": {
+                "label": "Note Id"
+            },
+            "description": {
+                "label": "Description",
+                "default": ""
+            }
+        }
+    },
+    "/Notes/Share": {
+        "post": {
+            "note_id": {
+                "label": "Note Id"
+            }
+        },
+        "get": {
+            "note": {
+                "label": "Note"
+            }
+        }
+    },
+    "/Notes/Pin": {
+        "post": {
+            "note_id": {
+                "label": "Note Id"
+            },
+            "pin": {
+                "label": "Bookmark"
+            }
+        }
+    },
+    "/EmailVerify": {
+        "post": {
+            "eToken": {
+                "label": "Email Token"
+            }
+        }
+    }
+}

@@ -1,0 +1,173 @@
+@import  "../../node_modules/react-toastify/scss/main.scss";
+@import  "../../node_modules/css-ripple-effect/dist/ripple.min.css";
+
+// @import url('https://fonts.googleapis.com/css?family=Lato');
+// $font-family-sans-serif: 'Lato', sans-serif;
+// @import url('https://fonts.googleapis.com/css?family=Roboto');
+// $font-family-sans-serif: 'Roboto', sans-serif;
+// @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+// $font-family-sans-serif: 'Open Sans', sans-serif;
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,700');
+$font-family-sans-serif: 'Poppins', sans-serif;
+
+$primary: #007bff;
+$secondary: #6610f2;
+$success: #6f42c1;
+$warning: #fd7e14;
+$info: #17a2b8;
+$light: #FAFBFC;
+$dark: #343a40;
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+$rt-color-success: darken($success, 2%);
+$rt-color-warning: darken($warning, 2%);
+$rt-color-error: darken($danger, 2%);
+$rt-toast-min-height: 50px;
+
+@import  "./common";
+
+$theme-circle-size: 20px;
+$theme-circle-padding: 6px;
+.btn-theme {
+    padding-left: $theme-circle-size+($theme-circle-padding*2);
+    @extend .position-relative;
+    &::after {
+        @extend .d-none;
+    }
+    .theme-circle {
+        width: $theme-circle-size;
+        height: $theme-circle-size;
+        top: 8px;
+        left: $theme-circle-padding;
+        @extend .border, .rounded-circle, .d-inline-block, .position-absolute;
+    }
+}
+
+
+$note-margin: 24px;
+.note-margin {
+    margin-bottom: $note-margin;
+}
+.note {
+    padding: 0 ($note-margin/2);
+    @extend .note-margin, .position-relative;
+    @include transition();
+    .card {
+        height: 195px;
+        min-height: 195px;
+        overflow: hidden;
+        @extend .rounded-0, .shadow;
+        .card-body {
+            @extend .p-3, .position-relative;
+            .floating-icons {
+                top: -6px;
+                left: 2px;
+                @extend .position-absolute;
+            }
+            .note-updating {
+                font-size: 0.73rem;
+                top: 12px;
+                right: 12px;
+                @extend .position-absolute, .text-muted;
+            }
+            .card-title {
+                @extend .font-weight-bold, .mb-2, .text-truncate;
+            }
+            .card-text {
+                height: 126px;
+                min-height: 126px;
+                max-height: 350px;
+                overflow: hidden;
+            }
+            [contenteditable]:focus {
+                outline: none;
+                @extend .border-0;
+            }
+        }
+        .card-footer {
+            line-height: 30px;
+            @extend .d-none, .pt-2, .pr-3, .pb-2, .pl-3;
+        }
+    }
+    &.note-edit {
+        z-index: 99;
+        transform: scale(1.04);
+        @include transition();
+        .card {
+            height: auto;
+            overflow: auto;
+            left: 0;
+            top: 0;
+            @extend .position-absolute;
+            .card-body {
+                .floating-icons {
+                    @extend .d-none;
+                }
+                .card-title {
+                    white-space: normal;
+                }
+                .card-text {
+                    height: auto;
+                    overflow-y: auto;
+                }
+            }
+            .card-footer {
+                @extend .d-block, .float-left;
+            }
+        }
+    }
+    &.note-expanded {
+        top: 10%;
+        @extend .position-fixed;
+    }
+}
+
+.navbar-brand {
+    .brand-n {
+        margin-right: -4px;
+    }
+}
+
+.btn-add-note {
+    top: 12px;
+    left: 0;
+    @extend .position-sticky, .shadow, .rounded-0;
+}
+
+.note.note-full-height {
+    .card {
+        height: auto;
+        .card-body {
+            .card-text {
+                height: auto;
+                max-height: none;
+            }
+        }
+    }
+}
+
+.modal-page {
+    max-width: 100%;
+    height: 100%;
+    @extend .mt-0, .mb-0;
+    .modal-content {
+        height: 100%;
+        @extend .rounded-0, .border-0;
+        .modal-header {
+            @extend .rounded-0;
+        }
+        .modal-body {
+            max-height: 100%;
+            overflow: auto;
+        }
+    }
+}
+
+.know-more-card {
+    img {
+        width: 160px;
+        margin-left: -88px;
+    }
+}

@@ -1,0 +1,60 @@
+{
+  "name": "notes",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free-regular": "^5.0.13",
+    "@fortawesome/fontawesome-free-solid": "^5.0.13",
+    "@fortawesome/fontawesome-svg-core": "^1.2.12",
+    "@fortawesome/free-solid-svg-icons": "^5.6.3",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.2.1",
+    "cors": "^2.8.5",
+    "css-ripple-effect": "^1.0.5",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "font-awesome": "^4.7.0",
+    "history": "^4.7.2",
+    "jquery": "^3.3.1",
+    "jsonwebtoken": "^8.4.0",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "mysql": "^2.16.0",
+    "node-sass": "^4.11.0",
+    "nodemailer": "^5.1.1",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-fontawesome": "^1.6.1",
+    "react-redux": "^6.0.0",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-router-redux": "^5.0.0-alpha.9",
+    "react-scripts": "2.1.3",
+    "react-toastify": "^4.5.2",
+    "reactstrap": "^7.1.0",
+    "redux": "^4.0.1",
+    "redux-promise": "^0.6.0",
+    "redux-thunk": "^2.3.0",
+    "socket.io": "^2.2.0",
+    "sqlstring": "^2.3.1"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "start-ui": "react-scripts start",
+    "build-ui": "react-scripts build",
+    "start-server": "nodemon server/index.js -e js",
+    "debug-server": "nodemon --inspect-brk server/index.js"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
