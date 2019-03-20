@@ -62,6 +62,13 @@ app.use((req, res, next)=> {
     next();
 });
 
+app.get('/name',(req, res)=> {
+    res.send({
+        fname: (process.env.fname || 'Suyash'),
+        lname: (process.env.lname || 'Kale')
+    });
+});
+
 server.listen(PORT, ()=> {
   console.log(`Server is up and running on port ${PORT};`);
 });
