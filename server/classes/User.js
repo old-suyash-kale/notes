@@ -68,7 +68,7 @@ class User {
         return new Promise((resolve, reject)=> {
             this.genJwtToken(2)
             .then((token)=> {
-                let aUrl = 'http://notes.suyashkale.com/', // 'http://localhost:3000/',
+                let aUrl = 'http://notes.andgoals.in/', // 'http://localhost:3000/',
                     eUrl = aUrl + `#/Email-Verification/${token}`;
                 nodemailer.createTransport('smtp://no-reply@notes.suyashkale.com:no-reply1!@md-1.webhostbox.net').sendMail({
                     from: `"Notes" <no-reply@notes.suyashkale.com>`,
